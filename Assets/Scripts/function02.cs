@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,20 @@ using UnityEngine;
 *Create By CG
 *Function 
 *******************************************************************************/
-namespace CG
+namespace function02
 {
-	public class GameManager : MonoBehaviour
+	public class function02 : MonoBehaviour
 	{
-        private void Start()
-        {
-            Debug.Log("在function分支进行修改");
-        }
+		    
+	}
+	public interface IEventManager
+	{
+
     }
+	public interface IGameEvent
+    {
+
+    }
+	public delegate void EventHandler<T>(T e) where T:IGameEvent;
+	public delegate void EventHandler(IGameEvent e);
 }

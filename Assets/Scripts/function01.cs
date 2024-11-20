@@ -5,13 +5,10 @@ using UnityEngine;
 *Create By CG
 *Function 
 *******************************************************************************/
-namespace CG
+namespace function01
 {
-	public class GameManager : MonoBehaviour
+	public class function01 : MonoBehaviour
 	{
-        private void Start()
-        {
-            Debug.Log("在function分支进行修改");
-        }
-    }
+		    
+	}
 }
