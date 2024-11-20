@@ -12,6 +12,7 @@ namespace CG
         private void Start()
         {
             Debug.Log("在function分支进行修改");
+            Debug.Log("在function分支进行第二次修改");
         }
     }
 }
