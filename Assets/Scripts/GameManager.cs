@@ -5,10 +5,13 @@ using UnityEngine;
 *Create By CG
 *Function 
 *******************************************************************************/
-namespace GameManger
+namespace CG
 {
 	public class GameManager : MonoBehaviour
 	{
-		    
-	}
+        private void Start()
+        {
+            
+        }
+    }
 }
