@@ -10,8 +10,8 @@ namespace CGFramework
 {
     public abstract class View : MonoBehaviour
     {
-        public string Name { get; }
-        
+        public abstract string Name { get; }
+        [HideInInspector]
         public List<string> AttentionList=new List<string>();
 
         /// <summary>

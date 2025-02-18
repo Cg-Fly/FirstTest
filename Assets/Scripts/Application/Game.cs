@@ -28,24 +28,34 @@ namespace Application
 			ObjPool=ObjectPool.Instance;
 			AudioMng=AudioMng.Instance;
 			StaticData=StaticData.Instance;
+			
+			//注册控制器
+			MVC.RegisterCommand(Consts.E_StartUp,typeof(StartUpCtrl));
+			
 			SceneManager.sceneLoaded += OnSceneLoaded;
+
+			LoadLevel(4);
 		}
 
-		public void LoadLevel()
+		public void LoadLevel(int level)
 		{
 			//离开旧场景
-			ScenesArgs args = new ScenesArgs();
-			args.SceneIndex = SceneManager.GetActiveScene().buildIndex;
+			ScenesArgs args = new ()
+			{
+				SceneIndex = SceneManager.GetActiveScene().buildIndex
+			};
 			MVC.SendCommand(Consts.E_ExitScenes,args);
 			
 			//进入新场景
-			SceneManager.LoadScene(args.SceneIndex,LoadSceneMode.Single);
+			SceneManager.LoadScene(level,LoadSceneMode.Single);
 		}
 
 		private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
 		{
-			ScenesArgs args = new ScenesArgs();
-			args.SceneIndex = arg0.buildIndex;
+			ScenesArgs args = new ()
+			{
+				SceneIndex = arg0.buildIndex
+			};
 			MVC.SendCommand(Consts.E_EnterScenes, args);
 		}
 

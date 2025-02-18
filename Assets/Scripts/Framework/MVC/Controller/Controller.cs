@@ -11,6 +11,10 @@ namespace CGFramework
 {
     public abstract class Controller
     {
+        /// <summary>
+        /// 控制器执行方法
+        /// </summary>
+        /// <param name="data"></param>
         public abstract void Execute(object data);
         
         /// <summary>

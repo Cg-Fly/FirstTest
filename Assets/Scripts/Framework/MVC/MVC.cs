@@ -29,6 +29,11 @@ namespace CGFramework
 		    /// <param name="view"></param>
 		    public static void RegisterView(View view)
 		    {
+			    if (Views.ContainsKey(view.Name))
+			    {
+				    Debug.LogWarning("视图已存在，无法注册");
+				    return;
+			    }
 			    view.RegisterAttention();
 			    Views.Add(view.Name, view);
 		    }
